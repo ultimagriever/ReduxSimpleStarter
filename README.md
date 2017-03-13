@@ -1,25 +1,17 @@
-# ReduxSimpleStarter
+# Client Auth Example with JWT
 
-Interested in learning [Redux](https://www.udemy.com/react-redux/)?
+### [Sister Project](/ultimagriever/auth-server)
 
-###Getting Started###
+### Installation
 
-There are two methods for getting started with this repo.
+```bash
+git clone git@github.com:ultimagriever/auth-client.git
+git clone git@github.com:ultimagriever/auth-server.git
+cd auth-client && yarn && cd ../auth-server && yarn
 
-####Familiar with Git?#####
-Checkout this repo, install dependencies, then start the gulp process with the following:
+# inside auth-client
+yarn start
 
-```
-	> git clone git@github.com:StephenGrider/ReduxSimpleStarter.git
-	> cd ReduxSimpleStarter
-	> npm install
-	> npm start
-```
-
-####Not Familiar with Git?#####
-Click [here](https://github.com/StephenGrider/ReactStarter/releases) then download the .zip file.  Extract the contents of the zip file, then open your terminal, change to the project directory, and:
-
-```
-	> npm install
-	> npm start
+# inside auth-server
+yarn start
 ```
