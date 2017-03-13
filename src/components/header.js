@@ -1,7 +1,30 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router';
 
 class Header extends Component {
+  getLinkList() {
+    return this.props.authenticated ? [
+      {
+        to: "/feature",
+        text: "Feature"
+      },
+      {
+        to: "/signout",
+        text: "Sign out"
+      }
+    ] : [
+      {
+        to: "/signin",
+        text: "Sign in"
+      },
+      {
+        to: "/signup",
+        text: "Sign up"
+      }
+    ];
+  }
+
   render() {
     return (
       <nav className="navbar navbar-default">
@@ -13,16 +36,15 @@ class Header extends Component {
           </div>
 
           <ul className="navbar-nav nav">
-            <li>
-              <Link to="/signin">
-                Sign in
-              </Link>
-            </li>
-            <li>
-              <Link to="/signup">
-                Sign up
-              </Link>
-            </li>
+            {
+              this.getLinkList().map(({ to, text }, index) => (
+                <li key={index}>
+                  <Link to={to}>
+                    {text}
+                  </Link>
+                </li>
+              ))
+            }
           </ul>
         </div>
       </nav>
@@ -30,4 +52,10 @@ class Header extends Component {
   }
 }
 
-export default Header;
+function mapStateToProps(state) {
+  return {
+    ...state.auth
+  };
+}
+
+export default connect(mapStateToProps)(Header);
