@@ -1,6 +1,6 @@
 # Client Auth Example with JWT
 
-### [Sister Project](/ultimagriever/auth-server)
+### [Sister Project](https://github.com/ultimagriever/auth-server)
 
 ### Installation
 
