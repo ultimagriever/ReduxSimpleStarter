@@ -27,12 +27,17 @@
   },
   "dependencies": {
     "babel-preset-stage-1": "^6.1.18",
+    "dotenv": "^4.0.0",
+    "firebase": "^3.7.2",
+    "googleapis": "^18.0.0",
     "lodash": "^3.10.1",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
+    "react-google-login": "^2.8.2",
     "react-redux": "^4.0.0",
     "react-router": "^2.0.1",
     "redux": "^3.0.4",
+    "redux-auth": "^0.0.5-beta5",
     "redux-form": "^6.5.0",
     "redux-thunk": "^2.2.0"
   }

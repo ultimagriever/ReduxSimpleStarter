@@ -1,3 +1,6 @@
+var getEnv = require('./config/env');
+var webpack = require('webpack');
+
 module.exports = {
   entry: [
     './src/index.js'
@@ -19,8 +22,12 @@ module.exports = {
   resolve: {
     extensions: ['', '.js', '.jsx']
   },
+  plugins: [
+    new webpack.DefinePlugin(getEnv('').stringified)
+  ],
   devServer: {
     historyApiFallback: true,
-    contentBase: './'
+    contentBase: './',
+    port: 3000
   }
 };
