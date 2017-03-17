@@ -1,16 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { reduxForm, Field } from 'redux-form';
-//import { OAuthSignInButton } from "redux-auth/bootstrap-theme";
 import GoogleLogin from 'react-google-login';
 import TextInput from '../form/text_input';
 import FormButtons from '../form/form_buttons';
+import PasswordlessSignin from './passwordless_signin';
 import Alert from '../form/alert';
 import * as actions from '../../actions';
-
-const responseGoogle = (response) => {
-  console.log(response);
-}
 
 class Signin extends Component {
   handleFormSubmit(values) {
@@ -41,14 +37,14 @@ class Signin extends Component {
         </div>
         <div className="panel-body row">
           {this.renderAlert()}
-          <div className="col-md-6">
+          <div className="col-md-4">
             <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
               <Field component={TextInput} type="text" name="email" label="E-mail" placeholder="test@example.com" />
               <Field component={TextInput} type="password" name="password" label="Password" />
               <FormButtons { ...formButtonProps } />
             </form>
           </div>
-          <div className="col-md-6">
+          <div className="col-md-4">
             <div style={googleBoxStyle}>
               <GoogleLogin
                 clientId={process.env.REACT_APP_GOOGLE_OAUTH_CLIENT_ID}
@@ -58,6 +54,9 @@ class Signin extends Component {
                 onFailure={this.props.signinUserWithGoogle}
               />
             </div>
+          </div>
+          <div className="col-md-4">
+            <PasswordlessSignin/>
           </div>
         </div>
       </div>

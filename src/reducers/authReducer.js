@@ -1,4 +1,4 @@
-import { AUTH_USER, SIGNOUT_USER, AUTH_ERROR } from '../actions/types';
+import { AUTH_USER, SIGNOUT_USER, AUTH_ERROR, TOKEN_SENT } from '../actions/types';
 
 export default (state = {}, action) => {
   switch(action.type) {
@@ -8,6 +8,8 @@ export default (state = {}, action) => {
       return { ...state, authenticated: false, error: '' };
     case AUTH_ERROR:
       return { ...state, error: action.payload };
+    case TOKEN_SENT:
+      return { ...state, flash: action.payload };
     default:
       return state;
   }

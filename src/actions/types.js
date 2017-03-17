@@ -1,3 +1,4 @@
 export const AUTH_USER = 'AUTH_USER';
 export const AUTH_ERROR = 'AUTH_ERROR';
 export const SIGNOUT_USER = 'SIGNOUT_USER';
+export const TOKEN_SENT = 'TOKEN_SENT';
